@@ -20,7 +20,10 @@ public class HeptHightJump {
 
 			try {
 				// Acceptable values in cm
-				if (distance < 75.7) {
+				if (distance < 0) {
+					System.out.println("Your score is 0");
+					distance = inputResult.enterResult();
+				} else if (distance < 75.7) {
 					System.out.println("Value too low");
 					distance = inputResult.enterResult();
 				} else if (distance > 270) {
