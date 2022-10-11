@@ -5,6 +5,7 @@ import common.*;
 public class Deca100M {
 
 	private int score;
+	String finalScore="";
 	private double A = 25.4347;
 	private double B = 18;
 	private double C = 1.81;
@@ -13,7 +14,7 @@ public class Deca100M {
 	InputResult inputResult = new InputResult();
 
 	// Calculate the score based on time. All running events.
-	public void calculateResult(double runningTime) {
+	public String calculateResult(double runningTime) {
 
 		while (active) {
 
@@ -22,12 +23,17 @@ public class Deca100M {
 				if (runningTime < 5) {
 					System.out.println("Value too low");
 					runningTime = inputResult.enterResult();
+					//return "Value too low";
 				} else if (runningTime > 17.8) {
 					System.out.println("Value too high");
 					runningTime = inputResult.enterResult();
-				} else {
+					//return "Value too high";
+				} else
+
+				{
 
 					score = calc.calculateTrack(A, B, C, runningTime);
+					finalScore=Double.toString(score);
 					active = false;
 				}
 			} catch (Exception e) {
@@ -35,7 +41,9 @@ public class Deca100M {
 				System.out.println("Please enter numbers");
 			}
 		}
-		System.out.println("The result is " + score);
+		System.out.println("The result is " + finalScore);
+
+		return "The result is " + finalScore;
 
 	}
 

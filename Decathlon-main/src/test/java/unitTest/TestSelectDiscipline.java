@@ -1,7 +1,7 @@
 package unitTest;
+
 import common.CalcTrackAndField;
 import common.InputResult;
-import common.InputSelection;
 import common.SelectDiscipline;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -15,12 +15,11 @@ public class TestSelectDiscipline {
         ByteArrayInputStream in = new ByteArrayInputStream("3".getBytes());
         System.setIn(in);
 
-       InputSelection select=new  InputSelection();
-        select.inputSelection();
+        SelectDiscipline select=new  SelectDiscipline ();
 
-        int actual=select.returnSelection();
+        String actual=select.inputSelection1();
 
-        int expected=3;
+        String expected="3";
 
         Assertions.assertEquals(expected,actual);
 
@@ -37,6 +36,36 @@ public class TestSelectDiscipline {
 
 
     }
+
+
+
+        @Test
+        public void TestSelectDiscipline1(){
+
+            ByteArrayInputStream in = new ByteArrayInputStream("Hej".getBytes());
+            System.setIn(in);
+
+            SelectDiscipline select=new  SelectDiscipline ();
+
+            String actual=select.inputSelection1();
+
+            String expected="Invalid input, try again.";
+
+            Assertions.assertEquals(expected,actual);
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
 
 
 

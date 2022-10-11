@@ -46,10 +46,11 @@ public class TestInputName {
         System.setIn(in);
 
         InputName myInput = new InputName();
+     //   myInput.addCompetitor1();
 
         //Act
 
-        String actual = myInput.addCompetitor();
+        String actual = myInput.addCompetitor1();
 
         String  expected="Only use letters when putting in competitors name.";
 

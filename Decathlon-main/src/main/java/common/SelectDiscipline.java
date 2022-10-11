@@ -24,6 +24,7 @@ import heptathlon.HeptShotPut;
 public class SelectDiscipline {
 
 	int disciplineSelected;
+	String disciplineSelected1="";
 	InputResult inputResult = new InputResult();
 	Scanner sc = new Scanner(System.in);
 	Deca100M deca100M = new Deca100M();
@@ -145,6 +146,25 @@ public class SelectDiscipline {
 		System.out.println("15. Heptathlon Long Jump.");
 		System.out.println("16. Heptathlon Shot Put.");
 		System.out.println("17. Heptathlon Javelin Throw.");
+	}
+
+	public String inputSelection1() {
+		System.out.println("Select discipline.");
+		printDisciplines();
+
+		try {
+
+			disciplineSelected = Integer.parseInt(sc.nextLine());
+			disciplineSelected1=String.valueOf(disciplineSelected);
+			return disciplineSelected1;
+
+		} catch (Exception e) {
+
+
+			return "Invalid input, try again.";
+		}
+
+
 	}
 
 }
