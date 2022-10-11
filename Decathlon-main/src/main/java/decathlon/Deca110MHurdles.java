@@ -19,7 +19,11 @@ public class Deca110MHurdles {
 
 			try {
 				// Acceptable values.
-				if (runningTime < 10) {
+				if (runningTime == 0) {
+					runningTime = inputResult.returnResult();
+					System.out.println("Your score is 0");
+					break;
+				} else if (runningTime < 10) {
 					System.out.println("Value too low");
 					runningTime = inputResult.enterResult();
 				} else if (runningTime > 28.5) {

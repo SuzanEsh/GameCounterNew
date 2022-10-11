@@ -20,7 +20,11 @@ public class Deca100M {
 
 			try {
 				// Acceptable values.
-				if (runningTime < 5) {
+				if (runningTime == 0) {
+					runningTime = inputResult.returnResult();
+					System.out.println("Your score is 0");
+					break;
+				} else if (runningTime < 5) {
 					System.out.println("Value too low");
 					runningTime = inputResult.enterResult();
 					//return "Value too low";
